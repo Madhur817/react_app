@@ -4,7 +4,7 @@ import Header from './components/layouts/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
-import axios from 'axios';
+// import axios from 'axios';
 
 import {
   BrowserRouter as Router,
@@ -19,8 +19,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
-         .then(res => this.setState({todos: res.data}))
+    // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    //      .then(res => this.setState({todos: res.data}))
   }
 
   //Toggle Complete
@@ -34,19 +34,19 @@ class App extends Component {
   };
 
   addTodo = (title) => {
-    axios.post('https://jsonplaceholder.typicode.com/todos',
-    {
-      title,
-      completed: false
-    })
-      .then(res => this.setState({todos:[...this.state.todos, res.data]}));
+    // axios.post('https://jsonplaceholder.typicode.com/todos',
+    // {
+    //   title,
+    //   completed: false
+    // })
+    //   .then(res => this.setState({todos:[...this.state.todos, res.data]}));
     
   }
 
   //Delete Todo Item
   delTodo = (id) => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      .then(this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
+    // axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    //   .then(this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
   };
 
   render() {
